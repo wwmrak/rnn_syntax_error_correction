@@ -30,8 +30,11 @@ target_sequences = []
 encoder_model_save_path = "C:\\Users\\Mrak\\PycharmProjects\\rnn_syntax_error_correction\\encoderModel"
 decoder_model_save_path = "C:\\Users\\Mrak\\PycharmProjects\\rnn_syntax_error_correction\\decoderModel"
 
-trainingSequencesFile = open("_trainingSourceFile_all_files_12000", "r")
-validationSequencesFile = open("_validationSourceFile-2000", "r")
+training_sequences_source_file = "_trainingSourceFile_all_files_12000"
+validation_sequences_source_file = "_validationSourceFile-2000"
+
+trainingSequencesFile = open(validation_sequences_source_file, "r")
+validationSequencesFile = open(validation_sequences_source_file, "r")
 
 lossesInTrainingFile = open("_average_loses_in_training", "a")
 lossesInValidationFile = open("_average_loses_in_validation", "a")
@@ -175,7 +178,7 @@ def train(input_tensor, target_tensor, encoder, decoder, encoder_optimizer, deco
     #initial encoder outputs(100)
     encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=device)
 
-    #iterate throught all words of input tensor (1 sentence)
+    #iterate through all words of input tensor (1 sentence)
     for ei in range(input_length):
         encoder_output, encoder_hidden_state = encoder(
             input_tensor[ei], encoder_hidden_state)
