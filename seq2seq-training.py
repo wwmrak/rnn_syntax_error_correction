@@ -30,8 +30,8 @@ target_sequences = []
 encoder_model_save_path = "C:\\Users\\Mrak\\PycharmProjects\\rnn_syntax_error_correction\\encoderModel"
 decoder_model_save_path = "C:\\Users\\Mrak\\PycharmProjects\\rnn_syntax_error_correction\\decoderModel"
 
-training_sequences_source_file = "_trainingSourceFile_all_files_12000"
-validation_sequences_source_file = "_validationSourceFile-2000"
+training_sequences_source_file = "trainingSourceFile_all_files_12000"
+validation_sequences_source_file = "validationSourceFile-2000"
 
 trainingSequencesFile = open(validation_sequences_source_file, "r")
 validationSequencesFile = open(validation_sequences_source_file, "r")
